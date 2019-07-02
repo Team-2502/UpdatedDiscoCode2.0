@@ -3,7 +3,6 @@ package com.team2502.disco.subsystem;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.team2502.disco.Constants;
 import com.team2502.disco.RobotMap;
-import com.team2502.disco.command.teleop.DriveCommand;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -46,6 +45,6 @@ public class DriveTrainSubsystem extends Subsystem
     @Override
     protected void initDefaultCommand()
     {
-        setDefaultCommand(new DriveCommand());
+
     }
 }
