@@ -17,8 +17,7 @@ public class RobotMap
      */
     public static final class Joystick
     {
-        public static final int JOYSTICK_DRIVE_LEFT = 1;
-        public static final int JOYSTICK_DRIVE_RIGHT = 0;
+        public static final int DANCE_PAD = 2;
 
         private Joystick() { }
 
@@ -27,11 +26,20 @@ public class RobotMap
          */
         public static final class Button
         {
-            public static final int SPIN_UP_FLYWHEEL = 3;
-            public static final int PUSH_DISC = 1;
+            public static final int DDR_UP = 3;
+            public static final int DDR_DOWN = 2;
+            public static final int DDR_RIGHT = 4;
+            public static final int DDR_LEFT = 1;
 
-            public static final int RAISE_SHOOTER = 4;
-            public static final int LOWER_SHOOTER = 5;
+            public static final int DDR_NE = 0;
+            public static final int DDR_NW = 0; // TODO figure out correct IDs
+            public static final int DDR_SW = 0;
+            public static final int DDR_SE = 0;
+
+            public static final int DDR_START = 0;
+            public static final int DDR_SELECT = 0;
+
+
             private Button() { }
         }
     }
