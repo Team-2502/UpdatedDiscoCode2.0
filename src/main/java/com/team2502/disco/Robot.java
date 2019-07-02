@@ -34,7 +34,7 @@ public class Robot extends TimedRobot {
 
   public static boolean DANCE_PAD_CONTROLS_ENABLED;
 
-  SendableChooser HIDChooser;
+  public static SendableChooser HIDChooser;
 
 
   /**
