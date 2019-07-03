@@ -27,11 +27,11 @@ public class RobotMap
          */
         public static final class Button
         {
-            public static final int SPIN_UP_FLYWHEEL = 3;
+            public static final int SPIN_UP_FLYWHEEL = 2;
             public static final int PUSH_DISC = 1;
 
             public static final int RAISE_SHOOTER = 4;
-            public static final int LOWER_SHOOTER = 5;
+            public static final int LOWER_SHOOTER = 3;
             private Button() { }
         }
     }
