@@ -31,14 +31,13 @@ public class RobotMap
             public static final int DDR_RIGHT = 4;
             public static final int DDR_LEFT = 1;
 
-            public static final int DDR_NE = 0;
-            public static final int DDR_NW = 0; // TODO figure out correct IDs
-            public static final int DDR_SW = 0;
-            public static final int DDR_SE = 0;
+            public static final int DDR_NE = 7;
+            public static final int DDR_NW = 8;
+            public static final int DDR_SW = 5;
+            public static final int DDR_SE = 6;
 
-            public static final int DDR_START = 0;
-            public static final int DDR_SELECT = 0;
-
+            public static final int DDR_START = 10;
+            public static final int DDR_SELECT = 9;
 
             private Button() { }
         }
