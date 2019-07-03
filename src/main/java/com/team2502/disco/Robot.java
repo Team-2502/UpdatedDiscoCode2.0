@@ -36,6 +36,8 @@ public class Robot extends TimedRobot {
 
   public static SendableChooser HIDChooser;
 
+  public static OI OI;
+
 
   /**
    * This function is run when the robot is first started up and should be
@@ -55,6 +57,8 @@ public class Robot extends TimedRobot {
       HIDChooser.setDefaultOption("Joysticks", false);
       HIDChooser.addOption("Dance Pad", true);
       SmartDashboard.putData(HIDChooser);
+
+      OI = new OI();
 
   }
 
@@ -87,7 +91,15 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit(){
+
       DANCE_PAD_CONTROLS_ENABLED = (Boolean) HIDChooser.getSelected();
+
+      if(DANCE_PAD_CONTROLS_ENABLED){
+          OI.DancePadInit();
+      }
+      else{
+          OI.JoystickInit();
+      }
   }
 
   /**
