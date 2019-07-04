@@ -30,6 +30,8 @@ public class Robot extends TimedRobot {
 
   public static Compressor COMPRESSOR;
 
+  public static OI OI;
+
 
   /**
    * This function is run when the robot is first started up and should be
@@ -44,6 +46,8 @@ public class Robot extends TimedRobot {
 
     COMPRESSOR = new Compressor();
     COMPRESSOR.setClosedLoopControl(true);
+
+    OI = new OI();
 
   }
 
@@ -79,6 +83,8 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
+      DashboardData.update();
+      Scheduler.getInstance().run();
   }
 
   /**
