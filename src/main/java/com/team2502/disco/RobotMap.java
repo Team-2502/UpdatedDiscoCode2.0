@@ -41,11 +41,11 @@ public class RobotMap
             public static final int DDR_START = 10;
             public static final int DDR_SELECT = 9;
 
-            public static final int SPIN_UP_FLYWHEEL = 3;
+            public static final int SPIN_UP_FLYWHEEL = 6;
             public static final int PUSH_DISC = 1;
 
-            public static final int RAISE_SHOOTER = 4;
-            public static final int LOWER_SHOOTER = 5;
+            public static final int RAISE_SHOOTER = 5;
+            public static final int LOWER_SHOOTER = 3;
 
             private Button() { }
         }

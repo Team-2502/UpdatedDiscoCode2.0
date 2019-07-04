@@ -34,7 +34,7 @@ public class Robot extends TimedRobot {
 
   public static boolean DANCE_PAD_CONTROLS_ENABLED;
 
-  public static SendableChooser HIDChooser;
+  public static SendableChooser<Boolean> HIDChooser;
 
   public static OI OI;
 
@@ -53,10 +53,10 @@ public class Robot extends TimedRobot {
       COMPRESSOR = new Compressor();
       COMPRESSOR.setClosedLoopControl(true);
 
-      HIDChooser = new SendableChooser();
+      HIDChooser = new SendableChooser<>();
       HIDChooser.setDefaultOption("Joysticks", false);
       HIDChooser.addOption("Dance Pad", true);
-      SmartDashboard.putData(HIDChooser);
+      SmartDashboard.putData("teleop mode:", HIDChooser);
 
       OI = new OI();
 
