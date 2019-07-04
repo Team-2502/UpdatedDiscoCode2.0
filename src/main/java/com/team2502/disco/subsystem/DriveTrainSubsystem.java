@@ -7,13 +7,11 @@ import com.team2502.disco.RobotMap;
 import com.team2502.disco.command.teleop.JoystickDriveCommand;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 public class DriveTrainSubsystem extends Subsystem
 {
-    private final DifferentialDrive drive;
-    private final SpeedControllerGroup left;
-    private final SpeedControllerGroup right;
+    public final SpeedControllerGroup left;
+    public final SpeedControllerGroup right;
 
     private final WPI_TalonSRX frontLeft;
     private final WPI_TalonSRX frontRight;
@@ -36,12 +34,6 @@ public class DriveTrainSubsystem extends Subsystem
         left = new SpeedControllerGroup(frontLeft, backLeft);
         right = new SpeedControllerGroup(frontRight, backRight);
 
-        drive = new DifferentialDrive(left, right);
-    }
-
-    public DifferentialDrive getDrive()
-    {
-        return drive;
     }
 
     @Override

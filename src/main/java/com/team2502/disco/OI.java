@@ -59,10 +59,10 @@ public final class OI
         DDR_SE.whileHeld(new ChangeAngleCommand(-1));
         DDR_NE.whenPressed(new ShootDiscCommand());
 
-        DDR_UP.whenPressed(new DriveForwardCommand(0.5));
-        DDR_DOWN.whenPressed(new DriveBackwardCommand(0.5));
-        DDR_RIGHT.whenPressed(new TurnRightCommand(0.5));
-        DDR_LEFT.whenPressed(new TurnLeftCommand(0.5));
+        DDR_UP.whenPressed(new DriveForwardCommand());
+        DDR_DOWN.whenPressed(new DriveBackwardCommand());
+        DDR_RIGHT.whenPressed(new TurnRightCommand());
+        DDR_LEFT.whenPressed(new TurnLeftCommand());
 
     }
 

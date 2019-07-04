@@ -1,25 +1,36 @@
 package com.team2502.disco.command.teleop;
 
 import com.team2502.disco.Robot;
-import edu.wpi.first.wpilibj.command.TimedCommand;
+import edu.wpi.first.wpilibj.command.Command;
 
-public class TurnLeftCommand extends TimedCommand
+import java.sql.Time;
+
+public class TurnLeftCommand extends Command
 {
-    public TurnLeftCommand(double timeout)
+    public TurnLeftCommand()
     {
-        super(timeout);
         requires(Robot.DRIVE_TRAIN);
     }
 
     @Override
     protected void execute()
     {
-        Robot.DRIVE_TRAIN.getDrive().tankDrive(-0.25, 0.25, true);
+        Robot.DRIVE_TRAIN.left.set(-0.4);
+        Robot.DRIVE_TRAIN.right.set(0.6);
+    }
+
+    @Override
+    protected void end(){
+        Robot.DRIVE_TRAIN.left.stopMotor();
+        Robot.DRIVE_TRAIN.right.stopMotor();
     }
 
     @Override
     protected boolean isFinished()
     {
+        if (timeSinceInitialized() > 0.4){
+            return true;
+        }
         return false;
     }
 }
