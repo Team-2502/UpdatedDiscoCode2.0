@@ -28,6 +28,7 @@ public class RobotMap
          */
         public static final class Button
         {
+
             public static final int DDR_UP = 3;
             public static final int DDR_DOWN = 2;
             public static final int DDR_RIGHT = 4;
@@ -46,7 +47,6 @@ public class RobotMap
 
             public static final int RAISE_SHOOTER = 5;
             public static final int LOWER_SHOOTER = 3;
-
             private Button() { }
         }
     }
