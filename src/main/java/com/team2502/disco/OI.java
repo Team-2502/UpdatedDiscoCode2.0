@@ -54,9 +54,9 @@ public final class OI
      */
     static
     {
-        DDR_NW.whileHeld(new RunDancePadCommand(new RunShooterCommand()));
-        DDR_SW.whileHeld(new RunDancePadCommand(new ChangeAngleCommand(1)));
-        DDR_SE.whileHeld(new RunDancePadCommand(new ChangeAngleCommand(-1)));
+        DDR_NW.whileHeld(new RunShooterCommandDancePad());
+        DDR_SW.whileHeld(new ChangeAngleCommandDancePad(1));
+        DDR_SE.whileHeld(new ChangeAngleCommandDancePad(-1));
         DDR_NE.whenPressed(new RunDancePadCommand(new ShootDiscCommand()));
 
         DDR_UP.whenPressed(new RunDancePadCommand(new DriveForwardCommand()));
