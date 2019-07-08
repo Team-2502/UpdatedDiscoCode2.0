@@ -10,6 +10,8 @@ public class FlywheelSubsystem extends Subsystem
     private final WPI_TalonSRX shooterFront;
     private final WPI_TalonSRX shooterBack;
 
+    private boolean isSpunUp = false;
+
     public FlywheelSubsystem()
     {
         shooterFront = new WPI_TalonSRX(RobotMap.Motor.SHOOTER_FRONT);
@@ -20,11 +22,20 @@ public class FlywheelSubsystem extends Subsystem
     {
         shooterFront.set(ControlMode.PercentOutput, voltage);
         shooterBack.set(ControlMode.PercentOutput, voltage);
+        if(voltage > 0) {
+            isSpunUp = true;
+        } else {
+            isSpunUp = false;
+        }
     }
 
     @Override
     protected void initDefaultCommand()
     {
         // no defualt command
+    }
+
+    public boolean isSpunUp() {
+        return isSpunUp;
     }
 }
