@@ -14,16 +14,16 @@ public class DriveForwardCommand extends Command
     }
 
     @Override
-    protected void execute()
+    protected void initialize()
     {
-        Robot.DRIVE_TRAIN.left.set(0.5);
-        Robot.DRIVE_TRAIN.right.set(0.5);
+        Robot.DRIVE_TRAIN.dancePadSpeedVectorRight += 0.5;
+        Robot.DRIVE_TRAIN.dancePadSpeedVectorLeft += 0.5;
     }
 
     @Override
     protected void end(){
-        Robot.DRIVE_TRAIN.left.stopMotor();
-        Robot.DRIVE_TRAIN.right.stopMotor();
+        Robot.DRIVE_TRAIN.dancePadSpeedVectorLeft -= 0.5;
+        Robot.DRIVE_TRAIN.dancePadSpeedVectorRight -= 0.5;
     }
 
     @Override

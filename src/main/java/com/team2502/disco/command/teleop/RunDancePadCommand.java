@@ -1,4 +1,4 @@
-package com.team2502.disco.command.teleop.dancePad;
+package com.team2502.disco.command.teleop;
 
 import com.team2502.disco.Robot;
 import edu.wpi.first.wpilibj.command.Command;

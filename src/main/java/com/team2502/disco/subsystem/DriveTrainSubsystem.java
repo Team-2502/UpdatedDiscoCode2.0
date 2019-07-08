@@ -2,9 +2,8 @@ package com.team2502.disco.subsystem;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.team2502.disco.Constants;
-import com.team2502.disco.Robot;
 import com.team2502.disco.RobotMap;
-import com.team2502.disco.command.teleop.JoystickDriveCommand;
+import com.team2502.disco.command.teleop.DriveCommand;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -12,6 +11,9 @@ public class DriveTrainSubsystem extends Subsystem
 {
     public final SpeedControllerGroup left;
     public final SpeedControllerGroup right;
+
+    public double dancePadSpeedVectorRight;
+    public double dancePadSpeedVectorLeft;
 
     private final WPI_TalonSRX frontLeft;
     private final WPI_TalonSRX frontRight;
@@ -34,14 +36,15 @@ public class DriveTrainSubsystem extends Subsystem
         left = new SpeedControllerGroup(frontLeft, backLeft);
         right = new SpeedControllerGroup(frontRight, backRight);
 
+        dancePadSpeedVectorRight = 0.0;
+        dancePadSpeedVectorLeft = 0.0;
+
     }
 
 
     @Override
     protected void initDefaultCommand()
     {
-        if(!Robot.DANCE_PAD_CONTROLS_ENABLED){
-            setDefaultCommand(new JoystickDriveCommand());
-        }
+        setDefaultCommand(new DriveCommand());
     }
 }

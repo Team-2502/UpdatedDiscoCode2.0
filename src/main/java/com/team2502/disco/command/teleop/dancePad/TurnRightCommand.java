@@ -8,22 +8,19 @@ import java.sql.Time;
 
 public class TurnRightCommand extends Command
 {
-    public TurnRightCommand()
-    {
-        requires(Robot.DRIVE_TRAIN);
-    }
+    public TurnRightCommand() { }
 
     @Override
     protected void execute()
     {
-        Robot.DRIVE_TRAIN.left.set(0.7);
-        Robot.DRIVE_TRAIN.right.set(-0.4);
+        Robot.DRIVE_TRAIN.dancePadSpeedVectorLeft += 0.7;
+        Robot.DRIVE_TRAIN.dancePadSpeedVectorRight += -0.4;
     }
 
     @Override
     protected void end(){
-        Robot.DRIVE_TRAIN.left.stopMotor();
-        Robot.DRIVE_TRAIN.right.stopMotor();
+        Robot.DRIVE_TRAIN.dancePadSpeedVectorLeft -= 0.7;
+        Robot.DRIVE_TRAIN.dancePadSpeedVectorRight -= -0.4;
     }
 
     @Override
