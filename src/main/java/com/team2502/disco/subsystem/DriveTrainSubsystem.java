@@ -40,7 +40,7 @@ public class DriveTrainSubsystem extends Subsystem
     @Override
     protected void initDefaultCommand()
     {
-        if(!Robot.DANCE_PAD_CONTROLS_ENABLED){
+        if(!Robot.DANCE_PAD_ENABLED){
             setDefaultCommand(new JoystickDriveCommand());
         }
     }
