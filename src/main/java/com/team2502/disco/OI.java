@@ -40,8 +40,6 @@ public final class OI
     public static final JoystickButton DDR_NE = new JoystickButton(DANCE_PAD, RobotMap.Joystick.Button.DDR_NE);
     public static final JoystickButton DDR_SW = new JoystickButton(DANCE_PAD, RobotMap.Joystick.Button.DDR_SW);
     public static final JoystickButton DDR_SE = new JoystickButton(DANCE_PAD, RobotMap.Joystick.Button.DDR_SE);
-    public static final JoystickButton DDR_START = new JoystickButton(DANCE_PAD, RobotMap.Joystick.Button.DDR_START);
-    public static final JoystickButton DDR_SELECT = new JoystickButton(DANCE_PAD, RobotMap.Joystick.Button.DDR_SELECT);
 
     public static final JoystickButton SPIN_UP_FLYWHEEL = new JoystickButton(JOYSTICK_DRIVE_RIGHT, RobotMap.Joystick.Button.SPIN_UP_FLYWHEEL);
     public static final JoystickButton PUSH_DISC = new JoystickButton(JOYSTICK_DRIVE_RIGHT, RobotMap.Joystick.Button.PUSH_DISC);
@@ -52,7 +50,7 @@ public final class OI
      * Runs when the first static method (usually OI#init()) is called
      * Called the "static initialization constructor"
      */
-    public void DancePadInit()
+    static
     {
         DDR_NW.whileHeld(new RunShooterCommand());
         DDR_SW.whileHeld(new ChangeAngleCommand(1));
@@ -64,10 +62,6 @@ public final class OI
         DDR_RIGHT.whenPressed(new TurnRightCommand());
         DDR_LEFT.whenPressed(new TurnLeftCommand());
 
-    }
-
-    public void JoystickInit()
-    {
         SPIN_UP_FLYWHEEL.whileHeld(new RunShooterCommand());
         RAISE_SHOOTER.whileHeld(new ChangeAngleCommand(1));
         LOWER_SHOOTER.whileHeld(new ChangeAngleCommand(-1));

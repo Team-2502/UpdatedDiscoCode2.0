@@ -14,8 +14,6 @@ import com.team2502.disco.subsystem.ShooterAngleSubsystem;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -32,12 +30,7 @@ public class Robot extends TimedRobot {
 
   public static Compressor COMPRESSOR;
 
-  public static boolean DANCE_PAD_CONTROLS_ENABLED;
-
-  public static SendableChooser<Boolean> HIDChooser;
-
   public static OI OI;
-
 
   /**
    * This function is run when the robot is first started up and should be
@@ -53,13 +46,7 @@ public class Robot extends TimedRobot {
       COMPRESSOR = new Compressor();
       COMPRESSOR.setClosedLoopControl(true);
 
-      HIDChooser = new SendableChooser<>();
-      HIDChooser.setDefaultOption("Joysticks", false);
-      HIDChooser.addOption("Dance Pad", true);
-      SmartDashboard.putData("teleop mode:", HIDChooser);
-
       OI = new OI();
-
   }
 
   /**
@@ -92,14 +79,6 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopInit(){
 
-      DANCE_PAD_CONTROLS_ENABLED = (Boolean) HIDChooser.getSelected();
-
-      if(DANCE_PAD_CONTROLS_ENABLED){
-          OI.DancePadInit();
-      }
-      else{
-          OI.JoystickInit();
-      }
   }
 
   /**
