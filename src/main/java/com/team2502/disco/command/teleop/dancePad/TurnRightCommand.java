@@ -1,13 +1,14 @@
-package com.team2502.disco.command.teleop;
+package com.team2502.disco.command.teleop.dancePad;
 
 import com.team2502.disco.Robot;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.TimedCommand;
 
 import java.sql.Time;
 
-public class TurnLeftCommand extends Command
+public class TurnRightCommand extends Command
 {
-    public TurnLeftCommand()
+    public TurnRightCommand()
     {
         requires(Robot.DRIVE_TRAIN);
     }
@@ -15,8 +16,8 @@ public class TurnLeftCommand extends Command
     @Override
     protected void execute()
     {
-        Robot.DRIVE_TRAIN.left.set(-0.4);
-        Robot.DRIVE_TRAIN.right.set(0.6);
+        Robot.DRIVE_TRAIN.left.set(0.7);
+        Robot.DRIVE_TRAIN.right.set(-0.4);
     }
 
     @Override

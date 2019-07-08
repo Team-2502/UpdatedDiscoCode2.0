@@ -1,6 +1,7 @@
 package com.team2502.disco;
 
 import com.team2502.disco.command.teleop.*;
+import com.team2502.disco.command.teleop.dancePad.*;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -45,6 +46,7 @@ public final class OI
     public static final JoystickButton PUSH_DISC = new JoystickButton(JOYSTICK_DRIVE_RIGHT, RobotMap.Joystick.Button.PUSH_DISC);
     public static final JoystickButton RAISE_SHOOTER = new JoystickButton(JOYSTICK_DRIVE_RIGHT, RobotMap.Joystick.Button.RAISE_SHOOTER);
     public static final JoystickButton LOWER_SHOOTER = new JoystickButton(JOYSTICK_DRIVE_RIGHT, RobotMap.Joystick.Button.LOWER_SHOOTER);
+    public static final JoystickButton TOGGLE_DDR = new JoystickButton(JOYSTICK_DRIVE_RIGHT, RobotMap.Joystick.Button.TOGGLE_DDR);
 
     /*
      * Runs when the first static method (usually OI#init()) is called
@@ -52,20 +54,21 @@ public final class OI
      */
     static
     {
-        DDR_NW.whileHeld(new RunShooterCommand());
-        DDR_SW.whileHeld(new ChangeAngleCommand(1));
-        DDR_SE.whileHeld(new ChangeAngleCommand(-1));
-        DDR_NE.whenPressed(new ShootDiscCommand());
+        DDR_NW.whileHeld(new RunDancePadCommand(new RunShooterCommand()));
+        DDR_SW.whileHeld(new RunDancePadCommand(new ChangeAngleCommand(1)));
+        DDR_SE.whileHeld(new RunDancePadCommand(new ChangeAngleCommand(-1)));
+        DDR_NE.whenPressed(new RunDancePadCommand(new ShootDiscCommand()));
 
-        DDR_UP.whenPressed(new DriveForwardCommand());
-        DDR_DOWN.whenPressed(new DriveBackwardCommand());
-        DDR_RIGHT.whenPressed(new TurnRightCommand());
-        DDR_LEFT.whenPressed(new TurnLeftCommand());
+        DDR_UP.whenPressed(new RunDancePadCommand(new DriveForwardCommand()));
+        DDR_DOWN.whenPressed(new RunDancePadCommand( new DriveBackwardCommand()));
+        DDR_RIGHT.whenPressed(new RunDancePadCommand(new TurnRightCommand()));
+        DDR_LEFT.whenPressed(new RunDancePadCommand(new TurnLeftCommand()));
 
         SPIN_UP_FLYWHEEL.whileHeld(new RunShooterCommand());
         RAISE_SHOOTER.whileHeld(new ChangeAngleCommand(1));
         LOWER_SHOOTER.whileHeld(new ChangeAngleCommand(-1));
         PUSH_DISC.whenPressed(new ShootDiscCommand());
+        TOGGLE_DDR.whenPressed(new ToggleDancePadCommand());
     }
 
     /**

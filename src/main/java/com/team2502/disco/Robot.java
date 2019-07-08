@@ -32,6 +32,8 @@ public class Robot extends TimedRobot {
 
   public static OI OI;
 
+  public static boolean DANCE_PAD_ENABLED;
+
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
@@ -47,6 +49,8 @@ public class Robot extends TimedRobot {
       COMPRESSOR.setClosedLoopControl(true);
 
       OI = new OI();
+
+      DANCE_PAD_ENABLED = true;
   }
 
   /**
