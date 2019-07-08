@@ -16,8 +16,8 @@ public class DriveBackwardCommand extends Command
     @Override
     protected void execute()
     {
-        Robot.DRIVE_TRAIN.left.set(-0.4);
-        Robot.DRIVE_TRAIN.right.set(-0.4);
+        Robot.DRIVE_TRAIN.left.set(-0.5);
+        Robot.DRIVE_TRAIN.right.set(-0.5);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class DriveBackwardCommand extends Command
     @Override
     protected boolean isFinished()
     {
-        if (timeSinceInitialized() > 0.25){
+        if (timeSinceInitialized() > 0.35){
             return true;
         }
         return false;

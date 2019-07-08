@@ -28,7 +28,7 @@ public class TurnLeftCommand extends Command
     @Override
     protected boolean isFinished()
     {
-        if (timeSinceInitialized() > 0.4){
+        if (timeSinceInitialized() > 0.5){
             return true;
         }
         return false;

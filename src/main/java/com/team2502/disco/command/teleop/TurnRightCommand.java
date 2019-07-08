@@ -16,7 +16,7 @@ public class TurnRightCommand extends Command
     @Override
     protected void execute()
     {
-        Robot.DRIVE_TRAIN.left.set(0.6);
+        Robot.DRIVE_TRAIN.left.set(0.7);
         Robot.DRIVE_TRAIN.right.set(-0.4);
     }
 
@@ -29,7 +29,7 @@ public class TurnRightCommand extends Command
     @Override
     protected boolean isFinished()
     {
-        if (timeSinceInitialized() > 0.4){
+        if (timeSinceInitialized() > 0.5){
             return true;
         }
         return false;
