@@ -60,7 +60,7 @@ public class RobotMap
      */
     public static final class Solenoid
     {
-        public static final int PUSHER_SOLENOID = 0;
+        public static final int PUSHER_SOLENOID = 1;
 
         private Solenoid() { }
     }
